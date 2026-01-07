@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsx tests/parse.test.ts"
   },
   "keywords": [
     "worldformat",
@@ -20,5 +20,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/worldformat/worldformat.git"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "tsx": "^4.21.0"
   }
 }
