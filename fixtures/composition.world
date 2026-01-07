@@ -1,0 +1,9 @@
+# comment
+[task]
+name = "A"
+
+[task]
+name = "B"
+
+[task/sub]
+done = true
