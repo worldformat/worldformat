@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parse = parse;
+exports.validate = validate;
 function parseValue(raw) {
     // string
     if (raw.startsWith('"') && raw.endsWith('"')) {
@@ -11,7 +15,7 @@ function parseValue(raw) {
     // number
     return Number(raw);
 }
-export function parse(text) {
+function parse(text) {
     const root = {};
     const lines = text.split(/\r?\n/);
     let currentPath = null;
@@ -45,7 +49,12 @@ export function parse(text) {
                     }
                 }
                 else {
-                    cursor[key] ?? (cursor[key] = {});
+                    if (!(key in cursor)) {
+                        cursor[key] = {};
+                    }
+                    else if (Array.isArray(cursor[key])) {
+                        throw new Error(`Ambiguous parent path: "${path.slice(0, i + 1).join("/")}"`);
+                    }
                     cursor = cursor[key];
                 }
             }
@@ -68,7 +77,7 @@ export function parse(text) {
     }
     return root;
 }
-export function validate(text) {
+function validate(text) {
     try {
         parse(text);
         return true;
