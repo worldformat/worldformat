@@ -1,9 +1,17 @@
-# comment
-[task]
-name = "A"
+# composition example
 
 [task]
-name = "B"
+name = "A"  # first task
+priority = 1
 
-[task/sub]
+[task]
+name = "B"  # second task
+priority = 2
+
+[project]
+name = "Demo"
+
+[project/subtask]
+name = "Subtask 1"
 done = true
+progress = 0.5

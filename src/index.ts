@@ -51,7 +51,14 @@ export function parse(text: string) {
             currentNode = obj;
           }
         } else {
-          cursor[key] ??= {};
+          if (!(key in cursor)) {
+            cursor[key] = {};
+          } else if (Array.isArray(cursor[key])) {
+            throw new Error(
+              `Ambiguous parent path: "${path.slice(0, i + 1).join("/")}"`,
+            );
+          }
+
           cursor = cursor[key];
         }
       }
