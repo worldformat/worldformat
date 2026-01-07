@@ -1,0 +1,22 @@
+{
+  "name": "worldformat",
+  "version": "0.1.0",
+  "description": "Reference implementation of the World format (parser and related utilities).",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "worldformat",
+    "parser"
+  ],
+  "author": "worldformat (https://worldformat.org/)",
+  "license": "MIT",
+  "packageManager": "pnpm@10.27.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/worldformat/worldformat.git"
+  }
+}
