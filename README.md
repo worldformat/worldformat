@@ -55,6 +55,14 @@ It intentionally does **not** include:
 
 Those concerns belong elsewhere.
 
+## Related Projects
+
+- **[worldformat.org](https://github.com/worldformat/worldformat.org)**  
+  The official website hosting the World Format definition and rationale.
+
+- **[worldstore](https://github.com/worldformat/worldstore)**  
+  A reference implementation and host for World files.
+
 ## License
 
 MIT
